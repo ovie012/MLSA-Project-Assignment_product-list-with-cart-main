@@ -22,9 +22,6 @@ main {
 
 .dessert {
   width: 67%;
-  /* margin: 5%;
-  margin-right: 3%; */
-  /* background: blue; */
 }
 
 .dessert h2 {
@@ -67,6 +64,7 @@ main {
   height: 35px;
   border-radius: 20px;
   outline: none;
+  color: hsl(14, 65%, 9%);
   border: 1px solid hsl(12, 62%, 55%);
   font-size: 0.7rem;
   font-weight: 600;
@@ -326,7 +324,6 @@ main {
 
 .cart-card section div {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 7px;
 }
@@ -593,7 +590,6 @@ button.full-cart:hover {
   padding: 2%;
   border-radius: 10px;
   background: #fff;
-  /* background: hsl(20, 50%, 98%); */
 }
 
 .inner-order-confirmed img {
@@ -652,7 +648,6 @@ button.full-cart:hover {
 
 .order-card section div {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 7px;
 }
@@ -758,7 +753,6 @@ button.full-cart:hover {
   
   .order-card section div {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     gap: 7px;
   }
