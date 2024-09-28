@@ -202,7 +202,7 @@ main {
 
 @media only screen and (max-width: 500px) {
   main {
-    padding: 7%;
+    padding: 10%;
     display: flex;
     flex-direction: column;
   }
@@ -214,7 +214,7 @@ main {
   .dessert-container {
     width: 100%;
     display: grid;
-    gap: 1%;
+    gap: 5%;
     grid-template-columns: 1fr;
   }
   
@@ -224,12 +224,14 @@ main {
   }
   
   .background-img {
-    margin-bottom: 6%;
+    margin-bottom: 7%;
+    height: 100%;
   }
   
   .dessert-container section button {
-    top: 63%;
-    font-size: 0.8rem;
+    top: 93%;
+    height: 35px;
+    font-size: 0.9rem;
   }
   
   .dessert-container p {
@@ -242,6 +244,20 @@ main {
   
   .dessert-container h5 {
     font-size: 0.9rem;
+  }
+
+  .cart-icon {
+    width: 20px;
+  }
+  
+  .increment {
+    gap: 30% !important;
+  }
+  
+  .increment img {
+    width: 15px;
+    height: 15px;
+    padding: 2.5px;
   }
 
   .mobile {
@@ -495,7 +511,7 @@ button.full-cart:hover {
 @media only screen and (max-width: 500px) {
   .cart {
     width: 100%;
-    margin-top: 250px;
+    margin-top: 950px;
     padding: 7%;
     border-radius: 5px;
   }
@@ -890,4 +906,53 @@ button.full-cart:hover {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* preloader styling */
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(20, 5%, 89%, 0.8);
+  z-index: 100;
+  /* opacity: 1; */
+}
+
+.preloader img {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border: 5px double hsl(12, 62%, 55%);
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  animation: preload 2s 0.5s infinite ease-in-out backwards;
+}
+
+@keyframes preload {
+  0% {
+    width: 50px;
+    height: 50px;
+    border: 5px double hsl(12, 62%, 55%);
+  }
+
+  50% {
+    width: 70px;
+    height: 70px;
+    border: 10px double hsl(12, 62%, 55%);
+  }
+
+  99% {
+    width: 50px;
+    height: 50px;
+    border: 5px double hsl(12, 62%, 55%);
+  }
+}
+
+.fade-away {
+  opacity: 0;
 }

@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import data from '/data.json'
 import Dessert from './components/Dessert';
 import Cart from './components/Cart';
-import OrderConfirmed from './components/OrderConfirmed'
+import OrderConfirmed from './components/OrderConfirmed';
+import PreLoader from './components/PreLoader';
 
 function App() {
   const initialCount = Array(data.length).fill(0);
   const [count, setCount] = useState(initialCount);
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const [fadeAway, setFadeAway] = useState(false);
   const totalPrice = cart.reduce((total, item) => total + (item.item.price * item.quantity), 0).toFixed(2);
 
   const addToCart = (item, quantity) => {
@@ -45,10 +48,23 @@ function App() {
     setCount(initialCount);
   };
 
+  useEffect(() => {
+    setLoader(true);
+
+    setTimeout(() => {
+      setFadeAway(true);
+    }, 4500)
+
+    setTimeout(() => {
+      setLoader(false);
+    }, 5000)
+  }, [])
+
 
   return (
     <>
       <main>
+        {loader && <PreLoader fadeAway={fadeAway} />}
         <Dessert addToCart={addToCart} removeFromCart={removeFromCart} count={count} setCount={setCount} />
         <Cart setOrder={setOrder} cart={cart} removeFromCart={removeFromCart} totalPrice={totalPrice} />
         {order && <OrderConfirmed handleNewOrder={handleNewOrder} cart={cart} totalPrice={totalPrice} />}

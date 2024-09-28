@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FullCart from './FullCart';
 import EmptyCart from './EmptyCart';
+import PreLoader from './PreLoader';
 
 function Cart({ cart, removeFromCart, totalPrice, setOrder }) {
   const cartAmount = cart.reduce((total, item) => total + item.quantity, 0);
