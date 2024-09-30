@@ -9,6 +9,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Red Hat Text", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 main {
@@ -65,6 +69,7 @@ main {
   border-radius: 20px;
   outline: none;
   color: hsl(14, 65%, 9%);
+  /* background: hsl(20, 50%, 98%); */
   border: 1px solid hsl(12, 62%, 55%);
   font-size: 0.7rem;
   font-weight: 600;
@@ -100,7 +105,7 @@ main {
 }
 
 .increment {
-  color: hsl(20, 50%, 98%);
+  color: hsl(20, 50%, 98%) !important;
   background: hsl(12, 62%, 55%);
   display: flex;
   justify-content: space-between;
@@ -114,18 +119,20 @@ main {
   background: hsl(12, 62%, 55%);
 }
 
-.increment img {
+.increment svg {
   border: 1px solid hsl(20, 50%, 98%);
   border-radius: 50%;
   width: 14px;
   height: 14px;
   padding: 3px;
   cursor: pointer;
+  fill: #fff;
+  transition: 0.3s ease-in-out;
 }
 
-.increment img:hover {
+.increment svg:hover {
   background: hsl(20, 50%, 98%);
-  color: hsl(12, 62%, 55%);
+  fill: hsl(12, 62%, 55%);
 }
 
 .tablet,
@@ -920,7 +927,6 @@ button.full-cart:hover {
   align-items: center;
   background: hsl(20, 5%, 89%, 0.8);
   z-index: 100;
-  /* opacity: 1; */
 }
 
 .preloader img {

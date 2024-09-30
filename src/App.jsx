@@ -60,14 +60,27 @@ function App() {
     }, 5000)
   }, [])
 
+  const loading = () => {
+    setFadeAway(false);
+    setLoader(true);
 
+    setTimeout(() => {
+      setFadeAway(true);
+    }, 1500)
+
+    setTimeout(() => {
+      setLoader(false);
+    }, 2000)
+  }
+
+  
   return (
     <>
       <main>
         {loader && <PreLoader fadeAway={fadeAway} />}
         <Dessert addToCart={addToCart} removeFromCart={removeFromCart} count={count} setCount={setCount} />
         <Cart setOrder={setOrder} cart={cart} removeFromCart={removeFromCart} totalPrice={totalPrice} />
-        {order && <OrderConfirmed handleNewOrder={handleNewOrder} cart={cart} totalPrice={totalPrice} />}
+        {order && <OrderConfirmed loading={loading} handleNewOrder={handleNewOrder} cart={cart} totalPrice={totalPrice} />}
       </main>
     </>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OrderConfirmed({ cart, totalPrice, handleNewOrder }) {
+function OrderConfirmed({ cart, totalPrice, handleNewOrder, loading }) {
   return (
     <>
       <div className="order-confirmed">
@@ -31,7 +31,7 @@ function OrderConfirmed({ cart, totalPrice, handleNewOrder }) {
                 <h5>${totalPrice}</h5>
             </div>
           </div>
-          <button onClick={handleNewOrder} className='full-cart'>Start New Order</button>
+          <button onClick={() => {handleNewOrder(); loading();}} className='full-cart'>Start New Order</button>
         </div>
       </div>
     </>

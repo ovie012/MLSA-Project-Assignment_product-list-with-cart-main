@@ -53,10 +53,19 @@ function Dessert({ addToCart, removeFromCart, count, setCount }) {
                 Add to cart
               </button>
             ) : (
+              // <button className='increment'>
+              //   <img onClick={() => handleDecrement(index)} src="/icon-decrement-quantity.svg" alt="minus" />
+              //   {count[index]}
+              //   <img onClick={() => handleIncrement(index)} src="/icon-increment-quantity.svg" alt="plus" />
+              // </button>
               <button className='increment'>
-                <img onClick={() => handleDecrement(index)} src="/icon-decrement-quantity.svg" alt="minus" />
+                <svg onClick={() => handleDecrement(index)}  xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2">
+                  <path d="M0 .375h10v1.25H0V.375Z" />
+                </svg>
                 {count[index]}
-                <img onClick={() => handleIncrement(index)} src="/icon-increment-quantity.svg" alt="plus" />
+                <svg onClick={() => handleIncrement(index)} width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
+                </svg>
               </button>
             )}
             <p>{item.category}</p>
